@@ -23,29 +23,29 @@ round_num = 1
 win_num = 0
 
 # GUI
-# Create the main window
+# main window
 window = tk.Tk()
 window.geometry("1080x720")
 window.configure(bg="green")
 window.title("Ace of Spades")
 
-#Create the dealer label
+# dealer label
 dealer_card_image = resize_card(f'cards/{dealer_card.value}_of_{dealer_card.suit}.png')
 dealer_label = tk.Label(window, image=dealer_card_image)
 dealer_label.pack(expand=True)
 dealer_label.place(relx=0.5, rely=0.30, anchor=tk.CENTER)
 
-# Create a frame to hold the player labels
+# frame to hold the player labels
 player_frame = tk.Frame(window)
 player_frame.configure(bg="green")
 player_frame.pack(pady=20)
 
-# Create the  first player label
+# first player label
 player_card_image1 = resize_card(f'cards/{player_card1.value}_of_{player_card1.suit}.png')
 player_label1 = tk.Label(player_frame, image=player_card_image1)
 player_label1.pack(side=tk.LEFT, padx=10, pady=10)
 
-# Create the second player label
+# second player label
 player_card_image2 = resize_card(f'cards/{player_card2.value}_of_{player_card2.suit}.png')
 player_label2 = tk.Label(player_frame, image=player_card_image2)
 player_label2.pack(side=tk.RIGHT, padx=10, pady=10)
@@ -53,12 +53,12 @@ player_label2.pack(side=tk.RIGHT, padx=10, pady=10)
 # Position the player frame in the middle of the window
 player_frame.place(relx=0.5, rely=0.70, anchor=tk.CENTER)
 
-# Create a label for the dealer title
+# label for the dealer title
 dealer_title = tk.Label(window, text="Dealer")
 dealer_title.pack()
 dealer_title.place(relx=0.5, rely=0.10, anchor=tk.CENTER)
 
-# create player label
+# player label
 player_title = tk.Label(window, text="Player")
 player_title.pack()
 player_title.place(relx=0.5, rely=0.50, anchor=tk.CENTER)
@@ -121,12 +121,12 @@ def update_strat():
     strat = strat_obj.correct_choice()
 
 
-#Create a frame to hold the action buttons
+# frame to hold the action buttons
 button_frame = tk.Frame(window)
 button_frame.configure(bg="green")
 button_frame.pack(side=tk.BOTTOM, pady=20)
 
-#Create the action buttons
+# the action buttons
 double_button = tk.Button(button_frame, text="Double", command=lambda: player_choice("Double"))
 double_button.pack(side=tk.LEFT, padx=20)
 
@@ -141,21 +141,21 @@ split_button.pack(side=tk.LEFT, padx=20)
 
 #___________________________________
 
-# Create the stats frame
+# the stats frame
 stats_frame = tk.Frame(window, bg="green")
 stats_frame.pack(side=tk.TOP, padx=20, pady=10, anchor=tk.NE)
 
-# Create the round_num label
+# the round_num label
 round_num_label = tk.Label(stats_frame, text=f"Round: {round_num}", bg="green", fg="white")
 round_num_label.pack(side=tk.LEFT, padx=5)
 
-# Create the correct_percentage label
+# the correct_percentage label
 correct_count = 0
 correct_percentage = 0
 correct_percentage_label = tk.Label(stats_frame, text=F"Correct Percentage: {correct_percentage}%", bg="green", fg="white")
 correct_percentage_label.pack(side=tk.LEFT, padx=5)
 
-# Create the last_choice label
+# the last_choice label
 last_choice = None
 last_choice_label = tk.Label(stats_frame, text=F"Last Choice: {last_choice}", bg="green", fg="white")
 last_choice_label.pack(side=tk.LEFT, padx=5)
